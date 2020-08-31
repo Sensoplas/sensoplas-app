@@ -1,0 +1,7 @@
+{
+  "name": "Senso+",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
