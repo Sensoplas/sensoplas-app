@@ -8,14 +8,10 @@ import {
   IonToolbar,
   IonButton,
   IonFooter,
-  IonProgressBar,
   IonSpinner,
 } from "@ionic/react";
 import React from "react";
-import { useParams } from "react-router";
-import ExploreContainer from "../components/ExploreContainer";
 import "./Scanner.css";
-import { time } from "console";
 import { ProgressBar } from "../components/ProgressBar";
 
 interface IProps {}

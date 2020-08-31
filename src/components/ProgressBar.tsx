@@ -1,48 +1,7 @@
-import {
-  IonContent,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonListHeader,
-  IonMenu,
-  IonMenuToggle,
-  IonNote,
-  IonProgressBar,
-} from "@ionic/react";
+import { IonProgressBar } from "@ionic/react";
 
 import React from "react";
-import { useLocation } from "react-router-dom";
-import {
-  bookmarkOutline,
-  mailOutline,
-  mailSharp,
-  barcodeOutline,
-  barcodeSharp,
-} from "ionicons/icons";
 import "./ProgressBar.css";
-
-interface AppPage {
-  url: string;
-  iosIcon: string;
-  mdIcon: string;
-  title: string;
-}
-
-const appPages: AppPage[] = [
-  {
-    title: "Scanner",
-    url: "/page/Scanner",
-    iosIcon: barcodeOutline,
-    mdIcon: barcodeSharp,
-  },
-  {
-    title: "Inbox",
-    url: "/page/Inbox",
-    iosIcon: mailOutline,
-    mdIcon: mailSharp,
-  },
-];
 
 interface IProps {
   text: string;
