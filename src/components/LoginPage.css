@@ -1,0 +1,27 @@
+/* ion-col.img {
+  height: 50% !important;
+  align-self: center;
+} */
+
+ion-title {
+  text-align: center;
+}
+
+ion-grid {
+  height: 100%;
+}
+
+ion-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+ion-row {
+  padding: 5%;
+}
+
+ion-footer {
+  padding: 10%;
+}

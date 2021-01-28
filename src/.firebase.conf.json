@@ -1,0 +1,9 @@
+{
+    "apiKey": "AIzaSyDDacwPHJdgnK02UMiqR8AM6QIkgaCKDqE",
+    "authDomain": "sensoplas.firebaseapp.com",
+    "databaseURL": "https://sensoplas.firebaseio.com",
+    "projectId": "sensoplas",
+    "storageBucket": "sensoplas.appspot.com",
+    "messagingSenderId": "255027643781",
+    "appId": "1:255027643781:web:9fbff138b4606d2400b0ec"
+  }
