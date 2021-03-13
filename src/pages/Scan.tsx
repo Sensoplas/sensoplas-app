@@ -48,7 +48,7 @@ const ScanPage: React.FC<props> = ({ scanner }) => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent scrollY={false}>
+      <IonContent>
         <SpinnerDisplay
           state={spinnerState}
           value={spinnerValue}
