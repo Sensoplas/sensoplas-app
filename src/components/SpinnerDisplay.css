@@ -1,0 +1,81 @@
+ion-grid.spinner-display {
+  width: 100%;
+  height: fit-content;
+  padding-top: 30%;
+}
+
+ion-text.spinner-display {
+  text-align: center;
+  height: 100%;
+  align-items: center;
+  padding: 10%;
+  width: 100%;
+}
+
+ion-text.nocol {
+  display: flex;
+}
+
+ion-text.success-notif {
+  font-size: 45px;
+}
+
+ion-spinner.large {
+  display: flex;
+  width: 20em;
+  height: 20em;
+  align-self: center;
+  width: 100%;
+}
+
+ion-row.spinner-display {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+ion-col.spinner-display {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+
+ion-content.spinner-display {
+  padding-top: 20%;
+  align-self: center;
+  /* display: flex; */
+  align-items: center;
+  flex-direction: row;
+  align-content: center;
+  /* width: 100%;
+  height: 30%; */
+}
+
+div.success-notif {
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+
+ion-badge.spinner-display {
+  font-size: 70px;
+  align-self: center;
+  text-align: center;
+  align-content: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+div.uvi {
+  padding: 13%;
+  padding-top: 5em;
+}
+
+ion-list.spinner-display {
+  padding: 5%;
+}
