@@ -37,11 +37,18 @@ const LoginPage: React.FC<LoginPageProps> = ({ conf }) => {
           </IonRow>
         </IonGrid>
       </IonContent>
+
       <IonFooter className="ion-no-border">
-        <StyledFirebaseAuth
-          uiConfig={conf}
-          firebaseAuth={firebase.auth()}
-        ></StyledFirebaseAuth>
+        <IonGrid fixed>
+          <IonRow>
+            <IonCol>
+              <StyledFirebaseAuth
+                uiConfig={conf}
+                firebaseAuth={firebase.auth()}
+              ></StyledFirebaseAuth>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
       </IonFooter>
     </IonPage>
   );

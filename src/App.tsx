@@ -1,10 +1,11 @@
 import Menu from "./components/Menu";
 import LoginPage from "./components/LoginPage";
-import Page from "./pages/Page";
+import ScanPage from "./pages/Scan";
 import React, { useEffect, useState } from "react";
 import { IonApp, IonRouterOutlet, IonSplitPane } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { Redirect, Route } from "react-router-dom";
+import MockUVIGetter from "./services/uviservice/mock";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -60,12 +61,18 @@ const App: React.FC = () => {
     return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
   }, []);
 
+  const mockUVGetter = new MockUVIGetter();
+
   let content = isSignedIn ? (
     <IonSplitPane contentId="main">
       <Menu />
       <IonRouterOutlet id="main">
-        <Route path="/page/:name" component={Page} exact />
-        <Redirect from="/" to="/page/Inbox" exact />
+        <Route
+          path="/page/Scan"
+          component={() => <ScanPage scanner={mockUVGetter} />}
+          exact
+        />
+        <Redirect from="/" to="/page/Scan" exact />
       </IonRouterOutlet>
     </IonSplitPane>
   ) : (

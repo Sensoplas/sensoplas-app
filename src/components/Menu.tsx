@@ -6,36 +6,21 @@ import {
   IonList,
   IonListHeader,
   IonMenu,
-  IonMenuButton,
   IonMenuToggle,
   IonNote,
 } from "@ionic/react";
-
-import React from "react";
-import { useLocation } from "react-router-dom";
+import firebase from "firebase";
 import {
-  archiveOutline,
-  archiveSharp,
-  bookmarkOutline,
-  heartOutline,
-  heartSharp,
-  mailOutline,
-  mailSharp,
-  paperPlaneOutline,
-  paperPlaneSharp,
-  trashOutline,
-  trashSharp,
-  warningOutline,
-  warningSharp,
+  analyticsOutline,
+  analyticsSharp,
   logOutOutline,
   logOutSharp,
   radioOutline,
   radioSharp,
-  analyticsOutline,
-  analyticsSharp,
 } from "ionicons/icons";
+import React from "react";
+import { useLocation } from "react-router-dom";
 import "./Menu.css";
-import firebase from "firebase";
 
 interface AppPage {
   url: string;
