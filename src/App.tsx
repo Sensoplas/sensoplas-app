@@ -65,7 +65,7 @@ const App: React.FC = () => {
 
   const mockUVGetter = new MockUVIGetter();
   const remoteUVIGetter = new RemoteGetter(
-    "https://api-ybqcojpgra-uc.a.run.app/api",
+    "https://sensoplas.web.app/api",
     firebase.auth(),
     new MockGetter()
   );
