@@ -6,6 +6,8 @@ import { IonApp, IonRouterOutlet, IonSplitPane } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { Redirect, Route } from "react-router-dom";
 import MockUVIGetter from "./services/uviservice/mock";
+import RemoteGetter from "./services/uviservice/http";
+import MockGetter from "./services/sensor/mock";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -62,6 +64,11 @@ const App: React.FC = () => {
   }, []);
 
   const mockUVGetter = new MockUVIGetter();
+  const remoteUVIGetter = new RemoteGetter(
+    "https://api-ybqcojpgra-uc.a.run.app",
+    firebase.auth(),
+    new MockGetter()
+  );
 
   let content = isSignedIn ? (
     <IonSplitPane contentId="main">
@@ -69,7 +76,7 @@ const App: React.FC = () => {
       <IonRouterOutlet id="main">
         <Route
           path="/page/Scan"
-          component={() => <ScanPage scanner={mockUVGetter} />}
+          component={() => <ScanPage scanner={remoteUVIGetter} />}
           exact
         />
         <Redirect from="/" to="/page/Scan" exact />
