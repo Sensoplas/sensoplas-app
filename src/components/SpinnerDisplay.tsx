@@ -104,37 +104,15 @@ const SpinnerDisplay: React.FC<SpinnerDisplayProps> = ({
             </Box>
           </div>
           <IonList className={`${className} spinner-display`}>
-            {getAdvice(value).map((x) => (
-              <IonItem>
+            {getAdvice(value).map((x, index) => (
+              <IonItem key={index}>
                 <IonText>
                   <p>{x}</p>
                 </IonText>
               </IonItem>
             ))}
           </IonList>
-          {/* <div
-            className="center spinner-display note"
-            style={{
-              paddingRight: "5%",
-              paddingLeft: "5%",
-              textAlign: "center",
-              justifyContent: "center",
-            }}
-          >
-            <IonText color="tertiary">
-              <p style={{ textJustify: "inter-word", fontSize: "20px" }}>
-                {getAdvice(value)}
-              </p>
-            </IonText>
-          </div> */}
         </div>
-        // <IonContent className={`${className} spinner-display`}>
-        //   {/* <IonContent className="uvi"> */}
-        //   {/* <IonText className={`${className} spinner-display`}> */}
-
-        //   {/* </IonText> */}
-        //   {/* </IonContent> */}
-        // </IonContent>
       );
   }
 };
