@@ -8,6 +8,7 @@ import { Redirect, Route } from "react-router-dom";
 import MockUVIGetter from "./services/uviservice/mock";
 import RemoteGetter from "./services/uviservice/http";
 import MockGetter from "./services/sensor/mock";
+import RemoteTrendGetter from "./services/trend/http";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -31,6 +32,7 @@ import firebase from "firebase";
 
 // Firebase Configuration Snippet
 import config from "./.firebase.conf.json";
+import TrendPage from "./pages/Trend";
 
 firebase.initializeApp(config);
 
@@ -70,6 +72,11 @@ const App: React.FC = () => {
     new MockGetter()
   );
 
+  const remoteTrendGetter = new RemoteTrendGetter(
+    "https://sensoplas.web.app/api",
+    firebase.auth()
+  );
+
   let content = isSignedIn ? (
     <IonSplitPane contentId="main">
       <Menu />
@@ -79,6 +86,10 @@ const App: React.FC = () => {
           component={() => <ScanPage scanner={remoteUVIGetter} />}
           exact
         />
+        <Route
+          path="/page/Trend"
+          component={() => <TrendPage getter={remoteTrendGetter} />}
+        ></Route>
         <Redirect from="/" to="/page/Scan" exact />
       </IonRouterOutlet>
     </IonSplitPane>
