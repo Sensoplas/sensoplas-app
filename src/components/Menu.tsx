@@ -42,6 +42,12 @@ const appPages: AppPage[] = [
     iosIcon: analyticsOutline,
     mdIcon: analyticsSharp,
   },
+  {
+    title: "Bluetooth Testing",
+    url: "/page/bluetooth",
+    iosIcon: analyticsOutline,
+    mdIcon: analyticsSharp,
+  },
   // {
   //   title: "Favorites",
   //   url: "/page/Favorites",

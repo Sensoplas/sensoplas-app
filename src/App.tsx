@@ -1,6 +1,7 @@
 import Menu from "./components/Menu";
 import LoginPage from "./components/LoginPage";
 import ScanPage from "./pages/Scan";
+import BluetoothPage from "./pages/bluetooth";
 import React, { useEffect, useState } from "react";
 import { IonApp, IonRouterOutlet, IonSplitPane } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
@@ -8,6 +9,7 @@ import { Redirect, Route } from "react-router-dom";
 import MockUVIGetter from "./services/uviservice/mock";
 import RemoteGetter from "./services/uviservice/http";
 import MockGetter from "./services/sensor/mock";
+import BleGetter from "./services/bluetooth/blueSerial"
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -36,7 +38,7 @@ firebase.initializeApp(config);
 
 const uiConfig = {
   // Popup signin flow rather than redirect flow.
-  // signInFlow: "popup",
+  signInFlow: "popup",
   // We will display Google and Facebook as auth providers.
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -63,6 +65,11 @@ const App: React.FC = () => {
     return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
   }, []);
 
+  // const routes: Route = [
+  //   {path: '/page/bluetooth'}
+
+  // ]
+  const bleGetter = new BleGetter();
   const mockUVGetter = new MockUVIGetter();
   const remoteUVIGetter = new RemoteGetter(
     "https://sensoplas.web.app/api",
@@ -80,6 +87,15 @@ const App: React.FC = () => {
           exact
         />
         <Redirect from="/" to="/page/Scan" exact />
+
+        <Route
+          path="/page/bluetooth"
+          component={() => <BluetoothPage bluetoothRetrieve={bleGetter} />}
+          exact
+          />
+
+          {/* Add more Route Objects to add more pages */}
+
       </IonRouterOutlet>
     </IonSplitPane>
   ) : (
