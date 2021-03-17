@@ -1,5 +1,9 @@
 export default class MockSensorDataGetter {
-  public getData(): Promise<string> {
+  public getABData(): Promise<string> {
+    return Promise.resolve("bleh");
+  }
+
+  public getUVCData(): Promise<string> {
     return Promise.resolve("bleh");
   }
 }
