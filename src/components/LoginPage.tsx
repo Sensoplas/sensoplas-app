@@ -25,7 +25,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ conf }) => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle size="large">SensoPlas</IonTitle>
+          <IonTitle size="large">SensoPlas2</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

@@ -1,9 +1,9 @@
 import axios from "axios";
 import firebase from "firebase";
-import { promisify } from "util";
 
 export interface SensorDataSource {
-  getData(): Promise<string>;
+  getABData(): Promise<string>;
+  getUVCData(): Promise<string>;
 }
 
 type APIResponse = {
@@ -19,7 +19,7 @@ export default class RemoteGetter {
   ) {}
 
   public async getUVIndex(): Promise<number> {
-    let data = await this.dataSource.getData();
+    let data = await this.dataSource.getABData();
     if (this.auth.currentUser === null) {
       throw "current user is not identified";
     }

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "255027643781",
+    "firebase_url": "https://sensoplas.firebaseio.com",
+    "project_id": "sensoplas",
+    "storage_bucket": "sensoplas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255027643781:android:da2b0e4200a4ca7d00b0ec",
+        "android_client_info": {
+          "package_name": "app.web.sensoplas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255027643781-2vltbcvnhsbjbofsa0r0rj2tn1vpo4p5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnZlCIe76odw7RVbQZPS0AxdW7WQNCLkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255027643781-2vltbcvnhsbjbofsa0r0rj2tn1vpo4p5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
