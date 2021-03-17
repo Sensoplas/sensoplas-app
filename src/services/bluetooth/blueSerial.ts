@@ -1,3 +1,4 @@
+//Co-Authored Ben MacDonald 2021-03-16 
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
 import { rejects } from 'assert';
 import { ENGINE_METHOD_CIPHERS } from 'constants';
@@ -19,7 +20,8 @@ export default class BleGetter {
     public async testing(): Promise<boolean>{
         let _this = this
         return new Promise(async function (resolve, reject){
-            resolve(await _this.isEnabled())
+            let output = await _this.isEnabled()
+            resolve(output)
         })
     }
 
