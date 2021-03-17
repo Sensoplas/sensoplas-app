@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@angular/core": "^11.2.5",
+    "@babel/compat-data": "^7.9.0",
     "@capacitor/android": "^2.4.0",
     "@capacitor/core": "2.4.0",
     "@ionic-native/bluetooth-serial": "^5.31.1",
