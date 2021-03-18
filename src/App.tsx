@@ -78,8 +78,8 @@ const App: React.FC = () => {
   const remoteUVIGetter = new RemoteGetter(
     "https://sensoplas.web.app/api",
     firebase.auth(),
-    new MockGetter()
-    // new BTGetter(ServerMAC)
+    // new MockGetter()
+    new BTGetter(ServerMAC)
   );
 
   const remoteTrendGetter = new RemoteTrendGetter(
