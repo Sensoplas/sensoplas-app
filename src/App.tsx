@@ -1,6 +1,7 @@
 import Menu from "./components/Menu";
 import LoginPage from "./components/LoginPage";
 import ScanPage from "./pages/Scan";
+import UVCPage from "./pages/UVC";
 import React, { useEffect, useState } from "react";
 import { IonApp, IonRouterOutlet, IonSplitPane } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
@@ -77,7 +78,8 @@ const App: React.FC = () => {
   const remoteUVIGetter = new RemoteGetter(
     "https://sensoplas.web.app/api",
     firebase.auth(),
-    new BTGetter(ServerMAC)
+    new MockGetter()
+    // new BTGetter(ServerMAC)
   );
 
   const remoteTrendGetter = new RemoteTrendGetter(
@@ -97,6 +99,10 @@ const App: React.FC = () => {
         <Route
           path="/page/Trend"
           component={() => <TrendPage getter={remoteTrendGetter} />}
+        ></Route>
+        <Route
+          path="/page/UVC"
+          component={() => <UVCPage scanner={mockUVGetter} />}
         ></Route>
         <Redirect from="/" to="/page/Scan" exact />
       </IonRouterOutlet>

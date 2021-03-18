@@ -17,6 +17,8 @@ import {
   logOutSharp,
   radioOutline,
   radioSharp,
+  heartOutline,
+  heartSharp,
 } from "ionicons/icons";
 import React from "react";
 import { useLocation } from "react-router-dom";
@@ -41,6 +43,12 @@ const appPages: AppPage[] = [
     url: "/page/Trend",
     iosIcon: analyticsOutline,
     mdIcon: analyticsSharp,
+  },
+  {
+    title: "UVC",
+    url: "/page/UVC",
+    iosIcon: heartOutline,
+    mdIcon: heartSharp,
   },
   // {
   //   title: "Favorites",

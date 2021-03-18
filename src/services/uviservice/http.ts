@@ -49,4 +49,35 @@ export default class RemoteGetter {
     }
     return res.data.prediction;
   }
+
+  public async getUVCIntensity(lambda: number): Promise<number> {
+    let data = await this.dataSource.getUVCData();
+
+    if (this.auth.currentUser === null) {
+      throw "current user is not identified";
+    }
+    let token = await this.auth.currentUser.getIdToken();
+
+    let res = await axios.post<APIResponse>(
+      `${this.host}/uvc-intensity`,
+      {
+        data: data,
+        wavelength: lambda,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    if (res.status != 200) {
+      console.log(
+        `remote api request returned ${res.status} with error: ${res.data.err}`
+      );
+    }
+
+    return res.data.prediction;
+  }
 }
