@@ -13,7 +13,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^8.0.3",
-    "axios": "^0.21.1",
+    "axios": "^1.6.0",
     "cordova-plugin-buildinfo": "^4.0.0",
     "cordova-plugin-inappbrowser": "^5.0.0",
     "cordova-universal-links-plugin-fix": "^1.2.1",
